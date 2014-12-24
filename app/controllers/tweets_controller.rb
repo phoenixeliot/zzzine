@@ -29,6 +29,7 @@ class TweetsController < ApplicationController
 
       #create tweets in database for top 20
       @tweets[0..12].each do |tweet|
+      
         Tweet.create(content: tweet['text'], 
                       user_id: current_user.id, 
                       date: tweet['created_at'], 
@@ -70,16 +71,42 @@ class TweetsController < ApplicationController
 
         temp_tweet = Tweet.find_by(content: tweet['text'])
         Gif.create(tweet_id: temp_tweet['id'], url: @gif)
-
-        # if tweet.entities.hashtags
-        #   tweet.entities.hashtags.each do |hashtag|
-        #     Hashtag.create(title: hashtag, tweet_id: temp_tweet.id)
-        #   end
-        # end       
+          
         end
       end 
+
+      #calculate min
+      min = 10000
+      current_user.tweets.each do |tweet|
+        if tweet.content.length < min
+          min = tweet.content.length
+          @temp_min = tweet
+        end
+      end
+      @temp_min.importance = 1
+      @temp_min.save!
+      
+      if current_user.tweets[0, 2].include?(@temp_min)
+        current_user.tweets[1, 3].each do |tweet|
+          tweet.importance = 2
+          tweet.save!
+        end
+      else
+        current_user.tweets[0, 2].each do |tweet|
+          tweet.importance = 2
+          tweet.save!
+        end
+      end
+
+      current_user.tweets.each do |tweet|
+        unless tweet.importance
+          tweet.importance = 3 
+          tweet.save!
+        end
+      end
     end
     
+    render json: current_user.tweets
   end
 
   def collect_with_max_id(collection=[], max_id=nil, &block)
