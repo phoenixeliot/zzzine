@@ -35,13 +35,21 @@ THEMES
   .byline {
     margin-top: 1em;
   }
-  .emphasis-1,
-  .emphasis-2 {
+  .emphasis-1 {
     h2 {
       font-size: 100px;
       line-height: 1.3;
       @include bp(medium) {
         font-size: 50px;
+      }
+    }
+  }
+  .emphasis-2 {
+    h2 {
+      font-size: 50px;
+      line-height: 1.3;
+      @include bp(medium) {
+        font-size: 30px;
       }
     }
   }
