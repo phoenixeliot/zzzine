@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Giphy</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Giffy</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    
+    <link rel="shortcut icon" href="/-/img/favicon.ico"/>
+    <%= stylesheet_link_tag 'application' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+
+    <!-- Runway -->
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+    
+    <!-- Stark -->
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
+    <!-- Neon -->
+    <link href='http://fonts.googleapis.com/css?family=Ceviche+One' rel='stylesheet' type='text/css'>
+
+    <!-- Bespoke -->
+    <link href='http://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+
+    <!-- Galactic -->
+    <link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" media="all" href="style.css" />
+    
+    <!--[if lt IE 9]><script src="/-/js/html5.js"></script><![endif]-->
+    
+    <!-- Google Analytics -->
+
+  </head>
+
+<body class="theme theme-galactic">
 
 <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
 <%= yield %>

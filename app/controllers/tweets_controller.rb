@@ -76,7 +76,7 @@ class TweetsController < ApplicationController
         end
       end 
     end
-    render json: current_user.tweets, include: [:gif]
+    #@tweets = json: current_user.tweets, include: [:gif]
   end
 
   def collect_with_max_id(collection=[], max_id=nil, &block)
