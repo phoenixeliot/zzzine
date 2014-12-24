@@ -112,6 +112,7 @@ class TweetsController < ApplicationController
             tweet.save
           end
         end
+
       end
       current_user.status = 2
       current_user.save

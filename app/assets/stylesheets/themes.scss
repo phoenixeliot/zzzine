@@ -66,6 +66,9 @@ THEMES
   footer {
     position: relative;
   }
+  section {
+    overflow: hidden;
+  }
 }
 
 
@@ -172,11 +175,6 @@ $accent: #CCC;
   text-transform: uppercase;
   color: $primary;
   /* Type */
-  h1 {
-    font-size: 60px;
-    letter-spacing: 1em;
-    line-height: 1.8;
-  }
   h2 {
     display: inline;
     padding-top: 5px;

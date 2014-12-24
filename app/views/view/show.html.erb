@@ -15,7 +15,9 @@
     </div>
   </header>
 
-  <% @current.tweets.each_with_index do |tweet, i| %>
+  <% 
+  sorted_tweets = @current.tweets.sort_by { |key, value| key["date"] }
+  sorted_tweets.each_with_index do |tweet, i| %>
   <% 
   style_id = i+1
   classes = "style-" + style_id.to_s + ' emphasis-' + tweet.importance.to_s 

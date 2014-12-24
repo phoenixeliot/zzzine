@@ -10,7 +10,7 @@ Include global variables and mixins here.
 
 $bp-extra-large: 1600px;
 $bp-large: 1200px;
-$bp-medium: 880px;
+$bp-medium: 1000px;
 $bp-small: 700px;
 $bp-extra-small: 420px;
 
@@ -52,8 +52,18 @@ $tertiary: #F72E2A;
   background-repeat: no-repeat;
 }
 
-/* GENERAL MIXINS
+/* FONTS
 --------------------------------------------- */
+
+@mixin font-base() {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+@mixin font-base-bold() {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
 
 
 /* UTILITIES
