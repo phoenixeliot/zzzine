@@ -1,0 +1,26 @@
+/* ---------------------------------------------
+
+ADMINISTRATIVE VIEWS & MODULES
+
+--------------------------------------------- */
+
+
+/* Theme Picker
+--------------------------------------------- */
+.theme {
+  .theme-picker {
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    .theme-option {
+      float: left;
+      width: percentage(1/6);
+      text-align: center;
+    }
+  }
+}

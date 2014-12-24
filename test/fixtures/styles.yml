@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  style_id: 1
+  slug: MyString
+  name: MyString
+  order: 1
+
+two:
+  style_id: 1
+  slug: MyString
+  name: MyString
+  order: 1
