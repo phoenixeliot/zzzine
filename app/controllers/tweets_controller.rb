@@ -106,6 +106,7 @@ class TweetsController < ApplicationController
             tweet.save!
           end
         end
+
       end
     end
     #render json: current_user.tweets
