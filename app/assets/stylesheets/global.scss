@@ -1,0 +1,90 @@
+/* ---------------------------------------------
+
+GLOBAL
+Include global variables and mixins here.
+
+--------------------------------------------- */
+
+/* BREAKPOINTS
+--------------------------------------------- */
+
+$bp-extra-large: 1600px;
+$bp-large: 1200px;
+$bp-medium: 880px;
+$bp-small: 700px;
+$bp-extra-small: 420px;
+
+@mixin bp($point) {
+
+  @if $point == extra-large {
+    @media (min-width: $bp-extra-large) { @content; }
+  }
+  @else if $point == large {
+    @media (max-width: $bp-large) { @content; }
+  }
+  @else if $point == medium {
+    @media (max-width: $bp-medium) { @content; }
+  }
+  @else if $point == small {
+    @media (max-width: $bp-small) { @content; }
+  }
+  @else if $point == extra-small {
+    @media (max-width: $bp-extra-small) { @content; }
+  }
+
+}
+
+/* COLORS
+--------------------------------------------- */
+
+$primary: #F72E2A;
+$secondary: #F72E2A;
+$tertiary: #F72E2A;
+
+
+/* HELPER MIXINS
+--------------------------------------------- */
+
+/* Sprite Helper */
+@mixin sprite($x, $y) {
+  background-image: url(-/img/sprite.png);
+  background-position: $x $y;
+  background-repeat: no-repeat;
+}
+
+/* GENERAL MIXINS
+--------------------------------------------- */
+
+
+/* UTILITIES
+--------------------------------------------- */
+
+::selection {
+	background: #333;
+	color: #E5E5E5;
+}
+::-moz-selection {
+	background: #333;
+	color: #E5E5E5;
+}
+*:focus {
+	outline: none
+}
+.clear:before,
+.clear:after {
+    content: "";
+    display: table;
+}
+.clear:after {
+    clear: both;
+}
+.clear {
+    zoom:1;
+}
+::-webkit-input-placeholder {}
+:-moz-placeholder {}
+input[type=text],
+input[type=submit] {
+	-webkit-appearance: none;
+	border-radius: 0;
+}
