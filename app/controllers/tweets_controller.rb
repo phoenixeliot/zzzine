@@ -8,6 +8,8 @@ class TweetsController < ApplicationController
     Thread.new do
 
       if current_user.tweets.count == 0
+        current_user.status = 0
+        current_user.save
         #set up Twitter client
         client = Twitter::REST::Client.new do |config|
             config.consumer_key        = "fY3pp25QT9wZocZg2CJeJXEu0"
@@ -23,12 +25,15 @@ class TweetsController < ApplicationController
           client.user_timeline(current_user, options)
         end
 
+        current_user.status = 1
+        current_user.save
+
         #filter out tweets older than a year
         @tweets.delete_if {|key, value| key['created_at'].to_i < TIME_LIMIT }
       
         #sort all tweets    
         @tweets.sort_by! { |key, value| key["favorite_count"] }.reverse!
-
+        i = 2
         #create tweets in database for top 20
         @tweets[0...12].each do |tweet|
         
@@ -75,6 +80,7 @@ class TweetsController < ApplicationController
           Gif.create(tweet_id: temp_tweet['id'], url: @gif)
             
           end
+          
         end 
 
         #calculate min
@@ -86,30 +92,38 @@ class TweetsController < ApplicationController
           end
         end
         @temp_min.importance = 1
-        @temp_min.save!
+        @temp_min.save
         
         if current_user.tweets[0, 2].include?(@temp_min)
           current_user.tweets[1, 3].each do |tweet|
             tweet.importance = 2
-            tweet.save!
+            tweet.save
           end
         else
           current_user.tweets[0, 2].each do |tweet|
             tweet.importance = 2
-            tweet.save!
+            tweet.save
           end
         end
 
         current_user.tweets.each do |tweet|
           unless tweet.importance
             tweet.importance = 3 
-            tweet.save!
+            tweet.save
           end
         end
       end
+      current_user.status = 2
+      current_user.save
     end
+    
     #render json: current_user.tweets
     render :show
+  end
+
+  def show
+    @user = User.find_by(id: params[:id])
+    render json: @user
   end
 
   def collect_with_max_id(collection=[], max_id=nil, &block)

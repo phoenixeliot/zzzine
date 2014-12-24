@@ -11,3 +11,19 @@
   </div>
 <% end %>
 </div>
+
+<script>
+	
+	
+	setInterval(function(){ 
+		jQuery.when(
+    		jQuery.getJSON("tweets/<%= current_user.id %>")
+		).done( function(json) {
+    		console.log(json['status']);
+		});
+		
+
+	}, 300);
+
+
+</script>
