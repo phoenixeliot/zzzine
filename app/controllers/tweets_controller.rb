@@ -29,7 +29,7 @@ class TweetsController < ApplicationController
       @tweets.sort_by! { |key, value| key["favorite_count"] }.reverse!
 
       #create tweets in database for top 20
-      @tweets[0..12].each do |tweet|
+      @tweets[0...12].each do |tweet|
       
         Tweet.create(content: tweet['text'], 
                       user_id: current_user.id, 
@@ -106,6 +106,7 @@ class TweetsController < ApplicationController
         end
       end
     end
+
   end
 
   def collect_with_max_id(collection=[], max_id=nil, &block)
