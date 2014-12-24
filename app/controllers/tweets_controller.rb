@@ -4,6 +4,7 @@ class TweetsController < ApplicationController
   TIME_LIMIT = Time.now.to_i - 31536000
   
   def index
+
     if current_user.tweets.count == 0
       #set up Twitter client
       client = Twitter::REST::Client.new do |config|
@@ -15,7 +16,7 @@ class TweetsController < ApplicationController
 
       #collect all tweets
       @tweets = collect_with_max_id do |max_id|
-        options = {count: 200, include_rts: true}
+        options = {count: 200, include_rts: false, exclude_replies: true}
         options[:max_id] = max_id unless max_id.nil?
         client.user_timeline(current_user, options)
       end
@@ -32,12 +33,16 @@ class TweetsController < ApplicationController
                       user_id: current_user.id, 
                       date: tweet['created_at'], 
                       favorites: tweet['favorites_count'],
+                      url: "https://twitter.com/" + current_user.uid + "/status/"+ tweet['id'].to_s
                       )
 
         temp_words = []
         max = 0
 
         @words = tweet['text'].split(" ").each do |word|
+          next if word[0] == "@"
+          next if word[0, 5] == "https" || word[0, 4] == "http"
+
           if word.length > max 
             temp_words.unshift(word)
             max = word.length
@@ -48,9 +53,7 @@ class TweetsController < ApplicationController
 
         [0..temp_words.length].each do |i|
 
-
         first = HTTParty.get("http://api.giphy.com/v1/gifs/search?q=" + temp_words[0] + "&api_key=dc6zaTOxFJmzC")['data'] if temp_words[0]
-        
         
         if first != []
           @gif = first[0]['images']['original']['url']
@@ -76,6 +79,7 @@ class TweetsController < ApplicationController
         end
       end 
     end
+    
   end
 
   def collect_with_max_id(collection=[], max_id=nil, &block)
