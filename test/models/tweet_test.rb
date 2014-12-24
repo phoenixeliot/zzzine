@@ -10,6 +10,7 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  url        :string(255)
+#  importance :integer
 #
 
 require 'test_helper'
