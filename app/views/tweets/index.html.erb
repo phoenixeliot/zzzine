@@ -14,7 +14,7 @@
   <section class="<%= classes %>">
     <div class="inner">
       <img src="<%= tweet.gif.url %>" alt="<%= tweet.content %>" />
-      <div class="date"><%= tweet.date %></div>
+      <div class="date"><%= tweet.date.strftime("%m/%d/%Y") %></div>
       <h2><%= tweet.content %></h2>
     </div>
   </section>

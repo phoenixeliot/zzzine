@@ -1,0 +1,741 @@
+/* ---------------------------------------------
+
+THEMES
+
+--------------------------------------------- */
+
+
+/* Global Theme Settings
+--------------------------------------------- */
+
+.theme {
+  font-size: 24px;
+  text-align: center;
+  line-height: 1.4;
+  /* Type */
+  @include bp(medium) {
+    font-size: 18px;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.6;
+  }
+  h1 {
+    font-size: 100px;
+    line-height: 1.3;
+    @include bp(medium) {
+      font-size: 50px;
+    }
+    @include bp(small) {
+      font-size: 40px;
+    }
+  }
+  h2 {
+    font-size: 24px;
+  }
+  .byline {
+    margin-top: 1em;
+  }
+  .emphasis-1,
+  .emphasis-2 {
+    h2 {
+      font-size: 100px;
+      line-height: 1.3;
+      @include bp(medium) {
+        font-size: 50px;
+      }
+    }
+  }
+  /* Layout */
+  section,
+  header,
+  footer {
+    position: relative;
+  }
+}
+
+
+/* Runway
+--------------------------------------------- */
+$primary: #000;
+$secondary: #fff;
+$accent: yellow;
+.runway {
+  font-family: 'Playfair Display', serif;
+  color: $primary;
+  /* Type */
+  a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    &:hover {
+      color: #000;
+      background: $accent;
+    }
+  }
+  h2 {
+    margin: 15px auto 0;
+    font-style: italic; 
+    max-width: 700px;
+  }
+  .date {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  /* Layout */
+  section,
+  header,
+  footer {
+    padding: 60px;
+    @include bp(small) {
+      padding: 40px 30px;
+    }
+  }
+  header {
+    background: $primary;
+    color: $secondary;
+    a {
+      color: $secondary;
+      border-bottom: 3px solid $secondary;
+      &:hover {
+        background: none;
+        color: $accent;
+        border-color: $accent;
+      }
+    }
+  }
+  footer {
+    .cta {
+     margin-top: 30px;
+      a {
+        display: inline-block;
+        padding: 0.8em 1em;
+        border: 3px solid $primary;
+        font-weight: bold;
+        &:hover {
+          background: $primary;
+          color: $secondary;
+        }  
+      }
+    }
+  }
+  img {
+    box-shadow: 10px 10px 0px $accent;
+    margin-bottom: 20px;
+  }
+  .separate:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 4px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -25px;
+    background: #000;
+  }
+  .emphasis-1 {
+    background: #000;
+    color: $accent;
+  }
+}
+
+/* Stark
+--------------------------------------------- */
+$primary: #000;
+$secondary: #FFF;
+$accent: #CCC;
+.stark {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  color: $primary;
+  /* Type */
+  h1 {
+    font-size: 60px;
+    letter-spacing: 1em;
+    line-height: 1.8;
+  }
+  h2 {
+    display: inline;
+    padding-top: 5px;
+    margin: 15px auto 0;
+    max-width: 700px;
+    line-height: 1.4;
+  }
+  a {
+    color: $primary;
+    text-decoration: none;
+    &:hover {
+      color: $accent;
+    }
+  }
+  .date {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  /* Layout */
+  header,
+  footer {
+    padding: 60px;
+  }
+  footer {
+    .cta {
+      margin-top: 30px;
+      a {
+        display: inline-block;
+        padding: 0.8em 1em;
+        border: 10px solid $primary;
+        text-decoration: none;
+        &:hover {
+          background: $primary;
+          color: $secondary;
+        }
+      }
+    }
+  } 
+  section {
+    width: 30%;
+    margin: 30px;
+    display: inline-block;
+    @include bp(medium) {
+      width: 90%;
+      margin: 30px auto;
+    }
+  }
+  .emphasis-1 {
+    width: 50%;
+    padding: 5%;
+    border: 10px solid $primary;
+    @include bp(medium) {
+      width: 90%;
+    }
+  }
+  .emphasis-2 {
+    width: 90%;
+    padding: 5%;
+    border: 10px solid $primary;
+    h2 {
+      background: none;
+    }
+    @include bp(medium) {
+      width: 90%;
+    }
+  }
+  img {
+    margin-bottom: 20px;
+  }  
+}
+
+/* Neon
+--------------------------------------------- */
+$primary: #000;
+$secondary: #fff;
+$accent1: #FF0092;
+$accent2: #FFCA1B;
+$accent3: #B6FF00;
+$accent4: #228DFF;
+$accent5: #BA01FF;
+
+.neon {
+  font-family: 'Ceviche One', serif;
+  color: $primary;
+  /* Type */
+  h1 {
+    line-height: 1;
+  }
+  h2 {
+    font-size: 30px;
+    line-height: 1.2;
+    margin: 15px auto 0;
+    max-width: 700px;
+  }
+  /* Layout */
+  section,
+  header,
+  footer {
+    padding: 60px;
+    @include bp(small) {
+      padding: 40px 30px;
+    }
+  }
+  header {
+    background: $accent1;
+    color: $accent3;
+    a {
+      color: $accent4;
+      &:hover {
+        color: $accent2;
+      }
+    }
+  }
+  footer {
+    background: $accent4;
+    color: $accent2;
+    .cta {
+     margin-top: 30px;
+      a {
+        display: inline-block;
+        padding: 0.8em 1em;
+        border: 5px double $accent1;
+        color: $accent3;
+        text-decoration: none;
+        &:hover {
+          background: $accent3;
+          color: $accent1;
+        }  
+      }
+    }
+  }
+  img {
+    border: double 5px $primary;
+    margin-bottom: 20px;
+  }
+  .emphasis {
+    h2 {
+      line-height: 1;
+    }
+  }
+  /* Section Styles */
+  .style-1,
+  .style-6,
+  .style-11 {
+    background: $accent2;
+    color: $accent5;
+    img {
+      border-color: $accent5;
+    }
+    &.emphasis h2 {
+      text-shadow: -5px 5px 0px $accent4,
+                 -10px 10px 0px $accent3;
+    }
+  }
+  .style-2,
+  .style-7,
+  .style-12 {
+    background: $accent3;
+    color: $accent1;
+    img {
+      border-color: $accent1;
+    }
+    &.emphasis h2 {
+      text-shadow: -5px 5px 0px $accent4,
+                 -10px 10px 0px $accent2;
+    }
+  }
+  .style-3,
+  .style-8 {
+    background: $accent4;
+    color: $accent2;
+    img {
+      border-color: $accent2;
+    }
+    &.emphasis h2 {
+      text-shadow: -5px 5px 0px $accent5,
+                 -10px 10px 0px $accent3;
+    }
+  }
+  .style-4,
+  .style-9 {
+    background: $accent5;
+    color: $accent3;
+    img {
+      border-color: $accent3;
+    }
+    &.emphasis h2 {
+      text-shadow: -5px 5px 0px $accent1,
+                 -10px 10px 0px $accent2;
+    }
+  }
+  .style-5,
+  .style-10 {
+    background: $accent1;
+    color: $accent4;
+    img {
+      border-color: $accent4;
+    }
+    &.emphasis h2 {
+      text-shadow: -5px 5px 0px $accent3,
+                 -10px 10px 0px $accent2;
+    }
+  }
+}
+
+/* Fast Food
+--------------------------------------------- */
+$primary: #FFF;
+$secondary: #000;
+$accent: #FFF;
+.fastfood {
+  font-family: 'Press Start 2P', monospace;
+  color: $secondary;
+  background: image-url('pizza.png');
+  /* Type */
+  h1, h2 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+  }
+  h2 {
+    display: inline;
+    background: $secondary;
+    color: $primary;
+    padding-top: 5px;
+    margin: 15px auto 0;
+    max-width: 700px;
+    line-height: 1.4;
+  }
+  a {
+    color: $primary;
+    &:hover {
+      background: $secondary;
+    }
+  }
+  .date {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  /* Layout */
+  .wrapper {
+  background: image-url('macandcheese.jpg');
+    margin: 5%;
+  }
+  header,
+  footer {
+    padding: 60px;
+  }
+  footer {
+    .cta {
+      margin-top: 30px;
+      a {
+        display: inline;
+      }
+    }
+  } 
+  section {
+    width: 30%;
+    margin: 30px;
+    display: inline-block;
+    @include bp(medium) {
+      width: 90%;
+      margin: 30px auto;
+    }
+  }
+  .emphasis-1 {
+    width: 50%;
+    @include bp(medium) {
+      width: 90%;
+    }
+  }
+  .emphasis-2 {
+    width: 90%;
+    h2 {
+      background: none;
+    }
+    @include bp(medium) {
+      width: 90%;
+    }
+  }
+  img {
+    margin-bottom: 20px;
+  }  
+}
+
+/* Bespoke
+--------------------------------------------- */
+$primary: #000;
+$secondary: #fff;
+$accent: #1EFEC2;
+.bespoke {
+  font-family: 'PT mono', serif;
+  color: $primary;
+  /* Type */
+  a {
+    color: #000;
+    text-decoration: none;
+    &:hover {
+      color: #000;
+      background: $accent;
+    }
+  }
+  h2 {
+    margin: 15px auto 0;
+    max-width: 700px;
+    font-size: 16px;
+  }
+  .date {
+    width: 125px;
+    height: 125px;
+    padding-top: 50px;
+    display: block;
+    border-radius: 100px;
+    border: 3px $accent solid;
+    font-size: 14px;
+    color: $primary;
+    position: absolute;
+    top: 0;
+    left: 30%;
+  }
+  /* Layout */
+  section,
+  header,
+  footer {
+    padding: 60px;
+    @include bp(small) {
+      padding: 40px 30px;
+    }
+  }
+  header {
+    a {
+      color: $primary;
+      border-bottom: 3px solid $primary;
+      &:hover {
+        background: none;
+        color: $accent;
+        border-color: $accent;
+      }
+    }
+  }
+  footer {
+    .cta {
+     margin-top: 30px;
+      a {
+        display: inline-block;
+        padding: 0.8em 1em;
+        border: 3px solid $accent;
+        font-weight: bold;
+        &:hover {
+          background: $accent;
+          color: $primary;
+        }  
+      }
+    }
+  }
+  .emphasis-1,
+  .emphasis-2 {
+    h2 {
+      max-width: none;
+    }
+  }
+  .emphasis-1 {
+    color: $accent;
+  }
+  /* Section Styles */
+  .style-1,
+  .style-6,
+  .style-11 {
+    .date {
+      left: 20%;
+    }
+  }
+  .style-2,
+  .style-7,
+  .style-12 {
+    .date {
+      top: 5%;
+      left: 40%;
+    }
+  }
+  .style-3,
+  .style-8 {
+    .date {
+      left: 60%;
+      width: 150px;
+      height: 150px;
+      padding-top: 60px;
+    }
+  }
+  .style-4,
+  .style-9 {
+    .date {
+      top: 20%;
+      left: 30%;
+    }
+  }
+  .style-5,
+  .style-10 {
+    .date {
+      left: 70%;
+      width: 100px;
+      height: 100px;
+      padding-top: 37px;
+      background: $accent;
+      color: $primary
+    }
+  }
+  @include bp(small) {
+    .style-1,
+    .style-2,
+    .style-3,
+    .style-4,
+    .style-5,
+    .style-6,
+    .style-7,
+    .style-8,
+    .style-9,
+    .style-10,
+    .style-11,
+    .style-12 {
+      .date {
+        width: 80px;
+        height: 80px;
+        padding-top: 27px;
+      }
+    }
+  }
+}
+
+/* Galactic
+--------------------------------------------- */
+$primary: #fff;
+$secondary: #000;
+$accent: #8C08A3;
+.galactic {
+  font-family: 'PT mono', serif;
+  color: $primary;
+  background: image-url('space.gif');
+  background-size: 300px 300px;
+  background-attachment: fixed;
+  /* Type */
+  a {
+    color: #000;
+    text-decoration: none;
+    &:hover {
+      color: #000;
+      background: $accent;
+    }
+  }
+  h2 {
+    margin: 15px auto 0;
+    max-width: 700px;
+  }
+  .date {
+    display: block;
+    padding: 3px 20px;
+    font-size: 14px;
+    color: $secondary;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    border-radius: 20px;
+    background: rgb(140,8,163);
+    background: -moz-linear-gradient(left, rgba(140,8,163,1) 0%, rgba(0,255,206,1) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(140,8,163,1)), color-stop(100%,rgba(0,255,206,1)));
+    background: -webkit-linear-gradient(left, rgba(140,8,163,1) 0%,rgba(0,255,206,1) 100%);
+    background: -o-linear-gradient(left, rgba(140,8,163,1) 0%,rgba(0,255,206,1) 100%);
+    background: -ms-linear-gradient(left, rgba(140,8,163,1) 0%,rgba(0,255,206,1) 100%);
+    background: linear-gradient(to right, rgba(140,8,163,1) 0%,rgba(0,255,206,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c08a3', endColorstr='#00ffce',GradientType=1 );
+  }
+  /* Layout */
+  section,
+  header,
+  footer {
+    padding: 60px;
+    @include bp(small) {
+      padding: 40px 30px;
+    }
+  }
+  header {
+    a {
+      color: $primary;
+      border-bottom: 3px solid $primary;
+      &:hover {
+        background: none;
+        color: $accent;
+        border-color: $accent;
+      }
+    }
+  }
+  footer {
+    .cta {
+     margin-top: 30px;
+      a {
+        display: inline-block;
+        padding: 0.8em 1em;
+        font-weight: bold;
+        border-radius: 100px;
+        background: rgb(140,8,163);
+        background: -moz-linear-gradient(left, rgba(140,8,163,1) 0%, rgba(0,255,206,1) 100%);
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(140,8,163,1)), color-stop(100%,rgba(0,255,206,1)));
+        background: -webkit-linear-gradient(left, rgba(140,8,163,1) 0%,rgba(0,255,206,1) 100%);
+        background: -o-linear-gradient(left, rgba(140,8,163,1) 0%,rgba(0,255,206,1) 100%);
+        background: -ms-linear-gradient(left, rgba(140,8,163,1) 0%,rgba(0,255,206,1) 100%);
+        background: linear-gradient(to right, rgba(140,8,163,1) 0%,rgba(0,255,206,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c08a3', endColorstr='#00ffce',GradientType=1 );
+        &:hover {
+          background: $accent;
+          color: $primary;
+        }  
+      }
+    }
+  }
+  .emphasis-1,
+  .emphasis-2 {
+    h2 {
+      max-width: none;
+    }
+  }
+  .emphasis-1 {
+    color: $accent;
+  }
+  /* Section Styles */
+  .style-1,
+  .style-6,
+  .style-11 {
+    .date {
+      left: 20%;
+      padding: 3px 80px;
+    }
+  }
+  .style-2,
+  .style-7,
+  .style-12 {
+    .date {
+      left: 30%;
+      padding: 3px 5px;
+    }
+  }
+  .style-3,
+  .style-8 {
+    .date {
+      left: 65%;
+      padding: 3px 30px;
+    }
+  }
+  .style-4,
+  .style-9 {
+    .date {
+      left: 30%;
+      padding: 3px 120px;
+    }
+  }
+  .style-5,
+  .style-10 {
+    .date {
+      left: auto;
+      right: 20%;
+      padding: 3px 20px;
+    }
+  }
+  @include bp(small) {
+    .style-1,
+    .style-2,
+    .style-3,
+    .style-4,
+    .style-5,
+    .style-6,
+    .style-7,
+    .style-8,
+    .style-9,
+    .style-10,
+    .style-11,
+    .style-12 {
+      .date {
+        top: 25px;
+        padding: 3px 20px;
+      }
+    }
+  }
+}
