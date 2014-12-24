@@ -53,16 +53,16 @@ class TweetsController < ApplicationController
         
         
         if first != []
-          @gif = first[0]['embed_url']
+          @gif = first[0]['images']['original']['url']
         elsif temp_words[1]
           second = HTTParty.get("http://api.giphy.com/v1/gifs/search?q=" + temp_words[1] + "&api_key=dc6zaTOxFJmzC")['data'] 
           if second != []
-            @gif = second[0]['embed_url']
+            @gif = second[0]['images']['original']['url']
           end
         end
 
         if @gif == nil
-          @gif = HTTParty.get("http://api.giphy.com/v1/gifs/search?q=grumpy+cat&api_key=dc6zaTOxFJmzC")['data'][0]['embed_url'] unless @gif.class == "string"
+          @gif = HTTParty.get("http://api.giphy.com/v1/gifs/search?q=grumpy+cat&api_key=dc6zaTOxFJmzC")['data'][0]['images']['original']['url']
         end
 
         temp_tweet = Tweet.find_by(content: tweet['text'])
@@ -76,7 +76,6 @@ class TweetsController < ApplicationController
         end
       end 
     end
-    #@tweets = json: current_user.tweets, include: [:gif]
   end
 
   def collect_with_max_id(collection=[], max_id=nil, &block)
