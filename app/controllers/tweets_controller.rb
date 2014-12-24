@@ -4,6 +4,7 @@ class TweetsController < ApplicationController
   TIME_LIMIT = Time.now.to_i - 31536000
   
   def index
+    render :show
 
     if current_user.tweets.count == 0
       #set up Twitter client
@@ -105,8 +106,6 @@ class TweetsController < ApplicationController
         end
       end
     end
-    
-    render json: current_user.tweets
   end
 
   def collect_with_max_id(collection=[], max_id=nil, &block)
