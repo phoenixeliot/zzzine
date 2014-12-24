@@ -1,3 +1,10 @@
+<div class="theme-picker">
+<% Style.all.each do |style| %>
+  <div class="theme-option" data-style-id="<%= style.style_id %>" data-style-slug="<%= style.slug %>">
+  <%= style.name %>
+  </div>
+<% end %>
+</div>
 <article class="wrapper">
 
   <header>
