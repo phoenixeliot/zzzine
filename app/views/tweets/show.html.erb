@@ -24,7 +24,8 @@
 <div class="row theme-picker">
 <% Style.all.each do |style| %>
   <div class="col4 theme-option" data-style-id="<%= style.style_id %>" data-style-slug="<%= style.slug %>">
-  <%= style.name %>
+  <% thumb_path = 'thumbs/' + style.slug + '.jpg' %>
+  <%= image_tag(thumb_path) %>
   </div>
 <% end %>
 </div>
