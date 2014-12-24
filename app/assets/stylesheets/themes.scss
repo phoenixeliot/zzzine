@@ -45,6 +45,13 @@ THEMES
       }
     }
   }
+  .emphasis-1,
+  .emphasis-2,
+  .emphasis-3 {
+    h2 {
+      max-width: none;
+    }
+  }
   /* Layout */
   section,
   header,
@@ -138,6 +145,13 @@ $accent: yellow;
     background: #000;
     color: $accent;
   }
+  .emphasis-1,
+  .emphasis-2,
+  .emphasis-3 {
+    h2 {
+      max-width: none;
+    }
+  }
 }
 
 /* Stark
@@ -204,14 +218,6 @@ $accent: #CCC;
     }
   }
   .emphasis-1 {
-    width: 50%;
-    padding: 5%;
-    border: 10px solid $primary;
-    @include bp(medium) {
-      width: 90%;
-    }
-  }
-  .emphasis-2 {
     width: 90%;
     padding: 5%;
     border: 10px solid $primary;
@@ -222,9 +228,23 @@ $accent: #CCC;
       width: 90%;
     }
   }
+  .emphasis-2 {
+    width: 50%;
+    padding: 5%;
+    border: 10px solid $primary;
+    @include bp(medium) {
+      width: 90%;
+    }
+  }
   img {
     margin-bottom: 20px;
   }  
+  .emphasis-1,
+  .emphasis-2 {
+    h2 {
+      max-width: none;
+    }
+  }
 }
 
 /* Neon
@@ -294,6 +314,12 @@ $accent5: #BA01FF;
   .emphasis {
     h2 {
       line-height: 1;
+    }
+  }
+  .emphasis-1,
+  .emphasis-2 {
+    h2 {
+      max-width: none;
     }
   }
   /* Section Styles */
@@ -435,6 +461,12 @@ $accent: #FFF;
     }
     @include bp(medium) {
       width: 90%;
+    }
+  }
+  .emphasis-1,
+  .emphasis-2 {
+    h2 {
+      max-width: none;
     }
   }
   img {

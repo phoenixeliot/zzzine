@@ -16,7 +16,8 @@
 
   <% current_user.tweets.each_with_index do |tweet, i| %>
   <% 
-  classes = "style-" + i.to_s 
+  style_id = i+1
+  classes = "style-" + style_id.to_s + ' emphasis-' + tweet.importance.to_s 
   %>
   <section class="<%= classes %>">
     <div class="inner">
