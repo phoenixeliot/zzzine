@@ -1,12 +1,8 @@
 class TweetsController < ApplicationController
-  
-
   TIME_LIMIT = Time.now.to_i - 31536000
-  
-  def index
-    
-    Thread.new do
 
+  def index
+    Thread.new do
       if current_user.tweets.count == 0
         current_user.status = 0
         current_user.save
@@ -36,7 +32,6 @@ class TweetsController < ApplicationController
         i = 2
         #create tweets in database for top 12
         @tweets[0...12].each do |tweet|
-        
           Tweet.create(content: tweet['text'], 
                         user_id: current_user.id, 
                         date: tweet['created_at'], 
@@ -117,8 +112,19 @@ class TweetsController < ApplicationController
       current_user.status = 2
       current_user.save
     end
-    
-    #render json: current_user.tweets
+
+    #render a list of the last 12 users to create a page
+    @last = User.last.id
+    @last_users = []
+    count = 0
+    while count < 12
+      @last_users << User.find_by_id(@last)
+      @last -= 1
+      count += 1
+    end
+    Rails.logger.info(">>><><><><><><><>>>>><")
+    Rails.logger.info(@last_users)
+
     render :show
   end
 
@@ -131,6 +137,7 @@ class TweetsController < ApplicationController
     response = yield(max_id)
     test = []
     collection += response
+    collection.flatten if collection.count > 2800
     response.empty? ? collection.flatten : collect_with_max_id(collection, response.last.id - 1, &block)
   end
 end

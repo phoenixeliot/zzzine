@@ -15,6 +15,27 @@
   <h2>Hold tight! Your zzzine is being created</h2>
 </div>
 
+<ul>
+  <% @last_users.each do |user| %>
+  <li><%= user %></li>
+  <% end %>
+<ul>
+
+<div class="site-credits">
+  &copy;<%= Time.now.year %> ZZZINE<br>
+  An experiment by <a href="http://twitter.com/coryetzkorn">@coryetzkorn</a> and <a href="https://github.com/elliottetzkorn">@elliottetzkorn</a> 
+<script>
+	setInterval(function(){ 
+		jQuery.when(
+    		jQuery.getJSON("tweets/<%= current_user.id %>")
+		).done( function(json) {
+    		console.log(json['status']);
+		});
+		
+
+	}, 650);
+</script>
+
 <div class="loading">
   <div class="bar"></div>
   <div class="bar progress"></div>

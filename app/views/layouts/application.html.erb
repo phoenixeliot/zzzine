@@ -52,7 +52,14 @@
 
 <body class="<%= body_class %>">
 
-<%= yield %>
+<div class="frame-top"></div>
+<div class="frame-right"></div>
+<div class="frame-bottom"></div>
+<div class="frame-left"></div>
+
+<div class="wrapper">
+    <%= yield %>
+</div>
 
 </body>
 </html>

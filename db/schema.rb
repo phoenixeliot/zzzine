@@ -48,14 +48,6 @@ ActiveRecord::Schema.define(version: 20141224212834) do
     t.integer  "user_id"
   end
 
-  create_table "themes", force: true do |t|
-    t.string   "name"
-    t.string   "slug"
-    t.integer  "theme_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "tweets", force: true do |t|
     t.string   "content"
     t.integer  "user_id"
