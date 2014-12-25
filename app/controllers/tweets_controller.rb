@@ -4,6 +4,7 @@ class TweetsController < ApplicationController
 
   def index
     if current_user.tweets.count == 0
+      render :show
       Thread.new do
         current_user.status = 0
         current_user.save
@@ -108,7 +109,6 @@ class TweetsController < ApplicationController
         current_user.status = 2
         current_user.save   
       end
-      render :show
     else
       redirect_to "/view/#{current_user.uid}"
     end
