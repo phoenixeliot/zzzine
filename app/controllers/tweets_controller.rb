@@ -55,8 +55,6 @@ class TweetsController < ApplicationController
           
           @gif = nil
 
-          [0..temp_words.length].each do |i|
-
           first = HTTParty.get("http://api.giphy.com/v1/gifs/search?q=" + temp_words[0] + "&api_key=dc6zaTOxFJmzC")['data'] if temp_words[0]
           
           if first != []
