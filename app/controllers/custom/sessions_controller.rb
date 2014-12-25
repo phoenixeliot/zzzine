@@ -2,13 +2,15 @@ class Custom::SessionsController < Devise::SessionsController
 # before_filter :configure_sign_in_params, only: [:create]
   def new 
     #create a list of the last 12 users
-    @last = User.last.id
-    @last_users = []
-    count = 0
-    while count < 12
-      @last_users << User.find_by_id(@last)
-      @last -= 1
-      count += 1
+    if User.count != 0
+      @last = User.last.id
+      @last_users = []
+      count = 0
+      while count < 12
+        @last_users << User.find_by_id(@last)
+        @last -= 1
+        count += 1
+      end
     end
     
   end
