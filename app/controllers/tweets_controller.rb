@@ -131,6 +131,7 @@ class TweetsController < ApplicationController
     response = yield(max_id)
     test = []
     collection += response
+    collection.flatten if collection.count > 2800
     response.empty? ? collection.flatten : collect_with_max_id(collection, response.last.id - 1, &block)
   end
 end
