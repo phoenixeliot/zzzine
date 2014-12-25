@@ -133,6 +133,18 @@ ADMINISTRATIVE VIEWS & MODULES
   }
 }
 
+.tweets-index {
+  .wrapper {
+    display: table;
+    width: 100%;
+    min-height: 100%;
+  }
+  .table-cell-v-align {
+    vertical-align: middle;
+    display: table-cell;
+  }
+}
+
 /* Theme Picker
 --------------------------------------------- */
 .theme {
