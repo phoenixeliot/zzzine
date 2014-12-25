@@ -4,8 +4,6 @@ class CallbacksController < Devise::OmniauthCallbacksController
 	sign_in_and_redirect @user
   end
 
-  
-
   private 
 
 	def collect_with_max_id(collection=[], max_id=nil, &block)

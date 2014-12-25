@@ -1,12 +1,8 @@
 class TweetsController < ApplicationController
-  
-
   TIME_LIMIT = Time.now.to_i - 31536000
-  
-  def index
-    
-    Thread.new do
 
+  def index
+    Thread.new do
       if current_user.tweets.count == 0
         current_user.status = 0
         current_user.save
@@ -36,7 +32,6 @@ class TweetsController < ApplicationController
         i = 2
         #create tweets in database for top 20
         @tweets[0...12].each do |tweet|
-        
           Tweet.create(content: tweet['text'], 
                         user_id: current_user.id, 
                         date: tweet['created_at'], 
@@ -118,7 +113,6 @@ class TweetsController < ApplicationController
       current_user.save
     end
     
-    #render json: current_user.tweets
     render :show
   end
 
