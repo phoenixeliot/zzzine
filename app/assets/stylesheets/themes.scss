@@ -83,11 +83,10 @@ THEMES
       }
     }
   }
-  .emphasis-1,
-  .emphasis-2,
   .emphasis-3 {
     h2 {
-      max-width: none;
+      max-width: 700px;
+      margin: 20px auto;
     }
   }
   /* Layout */
@@ -121,9 +120,7 @@ $accent: yellow;
     }
   }
   h2 {
-    margin: 15px auto 0;
     font-style: italic; 
-    max-width: 700px;
   }
   .date {
     display: block;
@@ -186,13 +183,6 @@ $accent: yellow;
     background: #000;
     color: $accent;
   }
-  .emphasis-1,
-  .emphasis-2,
-  .emphasis-3 {
-    h2 {
-      max-width: none;
-    }
-  }
 }
 
 /* Stark
@@ -209,7 +199,6 @@ $accent: #CCC;
     display: inline;
     padding-top: 5px;
     margin: 15px auto 0;
-    max-width: 700px;
     line-height: 1.4;
   }
   a {
@@ -274,12 +263,6 @@ $accent: #CCC;
   }
   img {
     margin-bottom: 20px;
-  }  
-  .emphasis-1,
-  .emphasis-2 {
-    h2 {
-      max-width: none;
-    }
   }
 }
 
@@ -301,10 +284,7 @@ $accent5: #BA01FF;
     line-height: 1;
   }
   h2 {
-    font-size: 30px;
     line-height: 1.2;
-    margin: 15px auto 0;
-    max-width: 700px;
   }
   /* Layout */
   section,
@@ -346,17 +326,6 @@ $accent5: #BA01FF;
   img {
     border: double 5px $primary;
     margin-bottom: 20px;
-  }
-  .emphasis {
-    h2 {
-      line-height: 1;
-    }
-  }
-  .emphasis-1,
-  .emphasis-2 {
-    h2 {
-      max-width: none;
-    }
   }
   /* Section Styles */
   .style-1,
@@ -458,7 +427,6 @@ $accent: #FFF;
     color: $primary;
     padding-top: 5px;
     margin: 15px auto 0;
-    max-width: 700px;
     line-height: 1.4;
   }
   a {
@@ -512,12 +480,6 @@ $accent: #FFF;
     }
     @include bp(medium) {
       width: 90%;
-    }
-  }
-  .emphasis-1,
-  .emphasis-2 {
-    h2 {
-      max-width: none;
     }
   }
   img {
@@ -593,12 +555,6 @@ $accent: #1EFEC2;
           color: $primary;
         }  
       }
-    }
-  }
-  .emphasis-1,
-  .emphasis-2 {
-    h2 {
-      max-width: none;
     }
   }
   .emphasis-1 {
@@ -691,7 +647,6 @@ $accent: #8C08A3;
   }
   h2 {
     margin: 15px auto 0;
-    max-width: 700px;
   }
   .date {
     display: block;
@@ -752,12 +707,6 @@ $accent: #8C08A3;
           color: $primary;
         }  
       }
-    }
-  }
-  .emphasis-1,
-  .emphasis-2 {
-    h2 {
-      max-width: none;
     }
   }
   .emphasis-1 {

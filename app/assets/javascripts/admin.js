@@ -75,4 +75,30 @@ $(document).ready(function() {
     }, 300);
   }
 
+  /* Admin Bar */
+  if($('.admin-bar').length) {
+    // Theme switcher
+    $('#theme-select').change(function() {
+      var val = $(this).val();
+      var slug = $(this).find('option:selected').data('slug');
+      $('article').attr('class', 'theme ' + slug);
+    });
+
+    $('#edit').click(function(e) {
+      e.preventDefault();
+      if($('.editable').is(':visible')) {
+        $(this).text('Edit');
+        $('#cancel').hide();
+        $('.editable').hide();
+        var formData = $('#update-form').serialize();
+        console.log(formData);
+      } else {
+        $(this).text('Save');
+        $('#cancel').show();
+        $('.editable').show();
+      }
+    });
+
+  }
+
 });

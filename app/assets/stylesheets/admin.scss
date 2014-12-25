@@ -4,7 +4,8 @@ ADMINISTRATIVE VIEWS & MODULES
 
 --------------------------------------------- */
 
-
+/*  Admin Modules
+--------------------------------------------- */
 .wordmark {
   display: block;
   margin: 0 auto;
@@ -44,8 +45,7 @@ ADMINISTRATIVE VIEWS & MODULES
   }
 }
 
-
-/* Home Tweets
+/* Admin Pages
 --------------------------------------------- */
 @keyframes pulse {
   0%   {transform: scale(1); color: #CCC;}
@@ -146,21 +146,66 @@ ADMINISTRATIVE VIEWS & MODULES
 }
 
 /* Theme Picker
+=======
+/* Admin Toolbar
+>>>>>>> 54bf91e... Editor
 --------------------------------------------- */
-.theme {
-  .theme-picker {
-    background: #000;
-    color: #fff;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    .theme-option {
+.view.logged-in .theme {
+  padding-top: 36px;
+}
+.admin-bar {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  color: #ccc;
+  @include font-base-bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  background: #000;
+  overflow: hidden;
+  .action {
+    display: block;
+    height: 36px;
+    padding: 12px 20px;
+    color: #ccc;
+    text-decoration: none;
+    &.left {
       float: left;
-      width: percentage(1/6);
-      text-align: center;
+    }
+    &.right {
+      float: right;
+    }
+    &:hover {
+      color: #000;
+      background: #fff;
+    }
+  }
+  #cancel {
+    display: none;
+  }
+  .editable {
+    display: none;
+    clear: both;
+    border-top: 1px solid #fff;
+    padding: 20px;
+    .theme-option {
+      width: 50%;
+      float: left;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #5b5b5b;
+    }
+    input {
+      @include font-base;
+      width: 100%;
+      color: #fff;
+      background: transparent;
+      outline: none;
+      border: 0;
+      font-size: 20px;
     }
   }
 }
