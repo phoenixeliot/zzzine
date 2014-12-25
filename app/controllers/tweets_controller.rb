@@ -105,7 +105,9 @@ class TweetsController < ApplicationController
             tweet.save
           end
         end
+        samples = ["A year in the life of", "365 days of", "The personal zzzine of", "The totally secret journal of", "Baller tweets complimentary of", "The Twitter game of", "12 Reasons you'll never be as real as", "The Tweet-museum of"]
         current_user.style_id = rand(5) + 1
+        current_user.title = samples[rand(8) + 1]
         current_user.status = 2
         current_user.save   
       end

@@ -21,6 +21,7 @@
 #  secret                 :string(255)
 #  status                 :integer
 #  style_id               :integer
+#  title                  :string(255)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
