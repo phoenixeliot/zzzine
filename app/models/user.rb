@@ -20,6 +20,7 @@
 #  token                  :string(255)
 #  secret                 :string(255)
 #  status                 :integer
+#  style_id               :integer
 #
 
 class User < ActiveRecord::Base
@@ -28,6 +29,7 @@ class User < ActiveRecord::Base
      :omniauthable, :omniauth_providers => [:twitter]
 
   has_many :tweets
+  has_one :style
 
   def self.from_omniauth(auth)
       where(provider: auth.provider, uid: auth['info']['nickname']).first_or_create do |user|
