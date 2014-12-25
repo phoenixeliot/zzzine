@@ -72,9 +72,7 @@ class TweetsController < ApplicationController
 
           temp_tweet = Tweet.find_by(content: tweet['text'])
           Gif.create(tweet_id: temp_tweet['id'], url: @gif)
-            
-          
-          
+              
         end 
 
         #calculate min
@@ -108,8 +106,9 @@ class TweetsController < ApplicationController
         end
         current_user.style_id = rand(5) + 1
         current_user.status = 2
-        current_user.save
-        render :show
+        current_user.save   
+      end
+      render :show
     else
       redirect_to "/view/#{current_user.uid}"
     end
