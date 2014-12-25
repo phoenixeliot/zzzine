@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :tweets, only: [:index, :show]
   resources :view, only: [:show]
  	
- 	match 'dashboard' => 'tweets#index', :via => [:get],  :as => 'user_root'
+ 	match 'new' => 'tweets#index', :via => [:get],  :as => 'user_root'
 
 	devise_scope :user do
 	  root to: "devise/sessions#new"
