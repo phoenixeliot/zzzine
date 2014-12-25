@@ -9,6 +9,9 @@ ADMINISTRATIVE VIEWS & MODULES
   display: block;
   margin: 40px auto;
 }
+.mini-wordmark {
+  width: 200px;
+}
 .site-credits {
   font-size: 12px;
   @include font-base-bold;
@@ -19,7 +22,8 @@ ADMINISTRATIVE VIEWS & MODULES
 
 /* Home Tweets
 --------------------------------------------- */
-.tweets {
+.tweets,
+.sessions {
   border: 10px solid #000;
   padding: 5%;
   @include font-base;
@@ -34,9 +38,8 @@ ADMINISTRATIVE VIEWS & MODULES
     @include font-base-bold;
     font-size: 20px;
     margin: 30px 0;
-    letter-spacing: 0.5em;
   }
-  .sign-in-large {
+  .btn-large {
     @include font-base-bold;
     display: block;
     width: 240px;
