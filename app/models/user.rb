@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
      :omniauthable, :omniauth_providers => [:twitter]
 
   has_many :tweets
-  has_one :style
+  belongs_to :style
 
   def self.from_omniauth(auth)
       where(provider: auth.provider, uid: auth['info']['nickname']).first_or_create do |user|
