@@ -20,6 +20,7 @@
 #  token                  :string(255)
 #  secret                 :string(255)
 #  status                 :integer
+#  style_id               :integer
 #
 
 require 'test_helper'

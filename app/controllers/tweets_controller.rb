@@ -109,6 +109,7 @@ class TweetsController < ApplicationController
         end
 
       end
+      current_user.style_id = rand(5) + 1
       current_user.status = 2
       current_user.save
     end

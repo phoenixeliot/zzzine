@@ -9,6 +9,8 @@
 #  order      :integer
 #  created_at :datetime
 #  updated_at :datetime
+#  user_id    :integer
+#  color      :string(255)
 #
 
 require 'test_helper'
