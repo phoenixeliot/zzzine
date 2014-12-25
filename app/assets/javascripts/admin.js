@@ -17,7 +17,6 @@ $(document).ready(function() {
     return color;
   }
 
-
   if($('.wordmark').length) {
 
     var letters = $('.wordmark .letter');
@@ -39,7 +38,7 @@ $(document).ready(function() {
     }, 100);
 
 
-    var signInButton = $('.sign-in-large');
+    var signInButton = $('.btn-large');
     setInterval(function() {
       var hex = getRandomColor();
       signInButton.css({ 'background': hex });
