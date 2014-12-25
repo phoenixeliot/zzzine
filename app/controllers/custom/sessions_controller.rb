@@ -11,6 +11,8 @@ class Custom::SessionsController < Devise::SessionsController
         @last -= 1
         count += 1
       end
+    else
+      @last_users = []
     end
     
   end
