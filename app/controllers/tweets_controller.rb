@@ -55,8 +55,6 @@ class TweetsController < ApplicationController
           
           @gif = nil
 
-          
-
           first = HTTParty.get("http://api.giphy.com/v1/gifs/search?q=" + temp_words[0] + "&api_key=dc6zaTOxFJmzC")['data'] if temp_words[0]
           
           if first != []
@@ -111,13 +109,12 @@ class TweetsController < ApplicationController
         current_user.style_id = rand(5) + 1
         current_user.status = 2
         current_user.save
-      end
-      
-      render :show
+        render :show
     else
       redirect_to "/view/#{current_user.uid}"
     end
   end
+  
 
   def show
     @user = User.find_by(id: params[:id])
