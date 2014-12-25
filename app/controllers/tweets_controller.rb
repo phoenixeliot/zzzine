@@ -55,7 +55,7 @@ class TweetsController < ApplicationController
           
           @gif = nil
 
-          [0..temp_words.length].each do |i|
+          
 
           first = HTTParty.get("http://api.giphy.com/v1/gifs/search?q=" + temp_words[0] + "&api_key=dc6zaTOxFJmzC")['data'] if temp_words[0]
           
@@ -75,7 +75,7 @@ class TweetsController < ApplicationController
           temp_tweet = Tweet.find_by(content: tweet['text'])
           Gif.create(tweet_id: temp_tweet['id'], url: @gif)
             
-          end
+          
           
         end 
 
