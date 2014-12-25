@@ -52,10 +52,12 @@
 
 <body class="<%= body_class %>">
 
-<div class="frame-top"></div>
-<div class="frame-right"></div>
-<div class="frame-bottom"></div>
-<div class="frame-left"></div>
+<% unless current_controler == 'view' %>
+    <div class="frame-top"></div>
+    <div class="frame-right"></div>
+    <div class="frame-bottom"></div>
+    <div class="frame-left"></div>
+<% end %>
 
 <div class="wrapper">
     <%= yield %>

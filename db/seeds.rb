@@ -11,29 +11,34 @@ Style.create(
   name: 'Runway',
   slug: 'runway',
   style_id: 1,
-  order: 1
+  order: 1,
+  color: 'light'
 )
 Style.create(
   name: 'Stark',
   slug: 'stark',
   style_id: 2,
-  order: 2
+  order: 2,
+  color: 'light'
 )
 Style.create(
   name: 'Neon',
   slug: 'neon',
   style_id: 3,
-  order: 3
+  order: 3,
+  color: 'light'
 )
 Style.create(
   name: 'Galactic',
   slug: 'galactic',
   style_id: 4,
-  order: 4
+  order: 4,
+  color: 'dark'
 )
 Style.create(
   name: 'Fast Food',
   slug: 'fastfood',
   style_id: 5,
-  order: 5
+  order: 5,
+  color: 'light'
 )

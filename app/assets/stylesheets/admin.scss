@@ -57,13 +57,12 @@ ADMINISTRATIVE VIEWS & MODULES
 .sessions {
   .wrapper {
     padding: 30px;
+    @include font-base;
+    text-align: center;
   }
   .wordmark {
     margin-top: 20px;
   }
-  border: 10px solid #000;
-  @include font-base;
-  text-align: center;
   h2 {
     @include font-base-bold;
     font-size: 20px;
