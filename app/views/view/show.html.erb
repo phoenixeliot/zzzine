@@ -1,3 +1,4 @@
+<!--
 <div class="theme-picker">
 <% Style.all.each do |style| %>
   <div class="theme-option" data-style-id="<%= style.style_id %>" data-style-slug="<%= style.slug %>">
@@ -5,13 +6,14 @@
   </div>
 <% end %>
 </div>
+-->
 
 <article class="wrapper">
 
   <header>
     <div class="inner">
       <h1>A year in the life of Kara Haupt, a memoir.</h1>
-      <div class="byline">by <a href="http://twitter.com/@karahaupt" target="_blank">@karahaupt</a></div>
+      <div class="byline">by <a href="http://twitter.com/<%= @current.uid %>" target="_blank">@<%= @current.uid %></a></div>
     </div>
   </header>
 

@@ -21,7 +21,8 @@ strong {
 img,
 embed,
 object,
-video {
+video,
+svg {
 	max-width: 100%;
 }
 a {
@@ -71,3 +72,10 @@ $gutter: 2.5%;
 .col10 { @include flexible-width(10,12); }
 .col11 { @include flexible-width(11,12); }
 .col12 { @include flexible-width(12,12); }
+
+
+.v-align {
+	position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

@@ -337,9 +337,12 @@ $accent5: #BA01FF;
     img {
       border-color: $accent5;
     }
-    &.emphasis h2 {
+    &.emphasis-1,
+    &.emphasis-2 {
+      h2 {
       text-shadow: -5px 5px 0px $accent4,
                  -10px 10px 0px $accent3;
+      }
     }
   }
   .style-2,
@@ -350,9 +353,12 @@ $accent5: #BA01FF;
     img {
       border-color: $accent1;
     }
-    &.emphasis h2 {
+    &.emphasis-1,
+    &.emphasis-2 {
+      h2 {
       text-shadow: -5px 5px 0px $accent4,
                  -10px 10px 0px $accent2;
+      }
     }
   }
   .style-3,
@@ -362,9 +368,12 @@ $accent5: #BA01FF;
     img {
       border-color: $accent2;
     }
-    &.emphasis h2 {
+    &.emphasis-1,
+    &.emphasis-2 {
+      h2 {
       text-shadow: -5px 5px 0px $accent5,
                  -10px 10px 0px $accent3;
+      }
     }
   }
   .style-4,
@@ -374,9 +383,12 @@ $accent5: #BA01FF;
     img {
       border-color: $accent3;
     }
-    &.emphasis h2 {
+    &.emphasis-1,
+    &.emphasis-2 {
+      h2 {
       text-shadow: -5px 5px 0px $accent1,
                  -10px 10px 0px $accent2;
+      }
     }
   }
   .style-5,
@@ -386,9 +398,12 @@ $accent5: #BA01FF;
     img {
       border-color: $accent4;
     }
-    &.emphasis h2 {
-      text-shadow: -5px 5px 0px $accent3,
+    &.emphasis-1,
+    &.emphasis-2 {
+      h2 {
+      text-shadow: -5px 5px 0px $accent2,
                  -10px 10px 0px $accent2;
+      }
     }
   }
 }

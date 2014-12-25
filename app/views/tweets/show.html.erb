@@ -1,9 +1,6 @@
-<a href="/view/<%= current_user.uid %>">click this</a>
-
-
 <svg class="wordmark" version="1.1"
      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-     x="0px" y="0px" width="429px" height="100px" viewBox="0 0 429 100" enable-background="new 0 0 429 100" xml:space="preserve">
+     x="0px" y="0px" width="429px" height="50px" viewBox="0 0 429 100" enable-background="new 0 0 429 100" xml:space="preserve">
   <defs>
   </defs>
   <path class="letter" d="M18.6,85.6h25.7V100H0v-5.6l27.2-80.2H1.7V0h43.8v5.6L18.6,85.6z"/>
@@ -13,20 +10,9 @@
   <path class="letter" d="M335.6,100l-16.8-45.3l-5.6-15.3V100h-14.4V0h14.1l15.6,45.8l5.1,15.5V0h14.3v100H335.6z"/>
   <path class="letter" d="M389,100V0H429v14.1h-24v27.6h16.7V55H405v30.5h24V100H389z"/>
 </svg>
-<h2>Create your ZZZINE with one click</h2>
 
-<a class="sign-in-large" href="#">Sign in with Twitter</a>
-
-<form id="create-form">
-<input class="title" type="text" value="A year in the life of <%= current_user.uid %>">
-</form>
-
-<div class="row theme-picker">
-<% Style.all.each do |style| %>
-  <div class="col4 theme-option" data-style-id="<%= style.style_id %>" data-style-slug="<%= style.slug %>">
-  <%= style.name %>
-  </div>
-<% end %>
+<div class="loading-message">
+  <h2>Hold tight! Your zzzine is being created</h2>
 </div>
 
 <div class="site-credits">
@@ -44,6 +30,26 @@
 		
 
 	}, 650);
+=======
+<div class="loading">
+  <div class="bar"></div>
+  <div class="step step-1"><span>Analyzing Tweets</span></div>
+  <div class="step step-2"><span>Matching GIFs</span></div>
+  <div class="step step-3"><span>Done!</span></div>
+</div>
 
+<a class="btn-large" href="/users/auth/twitter">View Zzzine</a>
 
+<script>
+/*
+  setInterval(function(){ 
+    jQuery.when(
+        jQuery.getJSON("tweets/<%= current_user.id %>")
+    ).done( function(json) {
+        console.log(json['status']);
+    });
+    
+
+  }, 300);
+*/
 </script>
