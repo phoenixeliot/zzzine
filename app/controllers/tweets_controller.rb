@@ -1,9 +1,10 @@
 class TweetsController < ApplicationController
+  before_action :authenticate_user!
   TIME_LIMIT = Time.now.to_i - 31536000
 
   def index
-    Thread.new do
-      if current_user.tweets.count == 0
+    if current_user.tweets.count == 0
+      Thread.new do
         current_user.status = 0
         current_user.save
         #set up Twitter client
@@ -107,14 +108,15 @@ class TweetsController < ApplicationController
             tweet.save
           end
         end
-
+        current_user.style_id = rand(5) + 1
+        current_user.status = 2
+        current_user.save
       end
-      current_user.style_id = rand(5) + 1
-      current_user.status = 2
-      current_user.save
+      
+      render :show
+    else
+      redirect_to "/view/#{current_user.uid}"
     end
-    
-    render :show
   end
 
   def show
