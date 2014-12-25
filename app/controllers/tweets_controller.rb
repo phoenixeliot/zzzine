@@ -112,7 +112,19 @@ class TweetsController < ApplicationController
       current_user.status = 2
       current_user.save
     end
-    
+
+    #render a list of the last 12 users to create a page
+    @last = User.last.id
+    @last_users = []
+    count = 0
+    while count < 12
+      @last_users << User.find_by_id(@last)
+      @last -= 1
+      count += 1
+    end
+    Rails.logger.info(">>><><><><><><><>>>>><")
+    Rails.logger.info(@last_users)
+
     render :show
   end
 
