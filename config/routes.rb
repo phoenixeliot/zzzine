@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 	devise_scope :user do
 	  root to: "custom/sessions#new"
 	end
+
+	match "*path" => redirect("/"), :via => [:get]
 end
