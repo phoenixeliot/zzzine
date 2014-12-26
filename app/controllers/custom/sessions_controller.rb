@@ -6,9 +6,8 @@ class Custom::SessionsController < Devise::SessionsController
       @last = User.last.id
       @last_users = []
       count = 0
-      while count < 12
-        @last_users << User.find_by_id(@last)
-        @last -= 1
+      while count < 9
+        @last_users << User.first
         count += 1
       end
     else

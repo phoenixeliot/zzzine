@@ -56,19 +56,21 @@ class TweetsController < ApplicationController
           
           @gif = nil
 
-          first = HTTParty.get("http://api.giphy.com/v1/gifs/search?q=" + temp_words[0] + "&api_key=dc6zaTOxFJmzC")['data'] if temp_words[0]
+          giphy_api_key = "yoJC2NqbB7RYLZoVTq"
+
+          first = HTTParty.get("http://api.giphy.com/v1/gifs/search?q=" + temp_words[0] + "&api_key=" + giphy_api_key)['data'] if temp_words[0]
           
           if first != []
             @gif = first[0]['images']['original']['url']
           elsif temp_words[1]
-            second = HTTParty.get("http://api.giphy.com/v1/gifs/search?q=" + temp_words[1] + "&api_key=dc6zaTOxFJmzC")['data'] 
+            second = HTTParty.get("http://api.giphy.com/v1/gifs/search?q=" + temp_words[1] + "&api_key=" + giphy_api_key)['data'] 
             if second != []
               @gif = second[0]['images']['original']['url']
             end
           end
 
           if @gif == nil
-            @gif = HTTParty.get("http://api.giphy.com/v1/gifs/search?q=grumpy+cat&api_key=dc6zaTOxFJmzC")['data'][0]['images']['original']['url']
+            @gif = HTTParty.get("http://api.giphy.com/v1/gifs/search?q=grumpy+cat&api_key=" + giphy_api_key)['data'][0]['images']['original']['url']
           end
 
           temp_tweet = Tweet.find_by(content: tweet['text'])

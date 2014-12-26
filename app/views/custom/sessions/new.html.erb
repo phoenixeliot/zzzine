@@ -1,7 +1,7 @@
 <div class="v-align">
   <svg class="wordmark mini-wordmark" version="1.1"
        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-       x="0px" y="0px" width="429px" height="50px" viewBox="0 0 429 100" enable-background="new 0 0 429 100" xml:space="preserve">
+       x="0px" y="0px" width="230px" height="50px" viewBox="0 0 429 100" enable-background="new 0 0 429 100" xml:space="preserve">
     <defs>
     </defs>
     <path class="letter" d="M18.6,85.6h25.7V100H0v-5.6l27.2-80.2H1.7V0h43.8v5.6L18.6,85.6z"/>
@@ -14,9 +14,35 @@
   <h2>Create your ZZZINE with one click</h2>
 
   <a class="btn-large" href="/users/auth/twitter">Sign in with Twitter</a>
-  <ul>
-	<% @last_users.each do |user| %>
-	<li><%= user %></li>
-	<% end %>
-  <ul>
-</path>
+  <br>
+  <br>
+  <div class="preview">
+    Hot off the press...
+    <ul>
+      <% @last_users.each do |user| %>
+        <% half = rand(2) %>
+        <% if half == 0 %>
+          <% @side1, @side2 = "left", "right" %>
+        <% else %>
+          <% @side1, @side2 = "right", "left" %>
+        <% end %>
+        <a class="previewLink" href="/view/<%= user.uid %>">
+          <li class="previewEntry">
+            <img style="float:<%= @side1%>" class="previewImage" src='<%= user.tweets.first.gif.url %>'>
+            <div style="<%= @side2%>: 0" class="previewSummary">
+              <%= "@" + user.uid unless user.nil? %>
+              <%= user.tweets.first.content unless user.nil? %>
+            </div>     
+            <% user.style_id unless user.nil? %>
+          
+          </li>
+        </a>
+      <% end %>
+
+    </ul>
+  </div>
+  <div class="site-credits">
+    &copy;<%= Time.now.year %> ZZZINE<br>
+    A piece of internet by <a href="http://twitter.com/coryetzkorn">cory</a> + <a href="http://elliottetzkorn.com">elliott</a>
+  </div>
+</div>
