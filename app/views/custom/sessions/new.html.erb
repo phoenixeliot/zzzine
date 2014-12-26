@@ -30,7 +30,7 @@
           <li class="previewEntry">
             <img style="float:<%= @side1%>" class="previewImage" src='<%= user.tweets.first.gif.url %>'>
             <div style="<%= @side2%>: 0" class="previewSummary">
-              <%= "@" + user.uid unless user.nil? %>
+              <a style="color: black" href="http://twitter.com/<%= user.uid %>" target="_blank">@<%= user.uid %></a>
               <%= user.tweets.first.content unless user.nil? %>
             </div>     
             <% user.style_id unless user.nil? %>
@@ -43,6 +43,6 @@
   </div>
   <div class="site-credits">
     &copy;<%= Time.now.year %> ZZZINE<br>
-    A piece of internet by <a href="http://twitter.com/coryetzkorn">cory</a> + <a href="http://elliottetzkorn.com">elliott</a>
+    A piece of internet by <a href="http://twitter.com/coryetzkorn">cory</a> + <a href="https://github.com/elliottetzkorn">elliott</a>
   </div>
 </div>
