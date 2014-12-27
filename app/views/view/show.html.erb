@@ -2,10 +2,10 @@
 <div class="admin-bar">
   <a href="#" class="action left" id="edit">Edit</a>
   <a href="#" class="action left" id="cancel">Cancel</a>
-  <a href="#" class="action left" id="delete">Delete</a>
+  <%= link_to "Destroy", admin_destroy_user_path(@current.uid), method: :delete, data: { confirm: "You sure?" } %>
   <a data-method="delete" href="/users/sign_out" class="action right" id="edit">Logout</a>
   <div class="editable">
-    <form id="update-form">
+    <form id="update-form" action="/view/<%= @current.uid %>/edit" method="GET">
       <div class="theme-option">
         <label for="theme-select">Theme</label>
         <select name="style_id" id="theme-select">
@@ -16,8 +16,9 @@
       </div>
       <div class="theme-option">
         <label for="theme-content">Title</label>
-        <input type="text" id="theme-content" name="content" value="<%= title %>">
+        <input type="text" id="theme-content" name="content" value="<%= @current.title %>">
       </div>
+      <input type="submit" value="Save!">
     </form>
   </div>
 </div>
