@@ -72,7 +72,7 @@ $(document).ready(function() {
           updateProgress(status);
         }
       });
-    }, 300);
+    }, 600);
   }
 
   /* Admin Bar */
