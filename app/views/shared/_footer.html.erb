@@ -1,0 +1,16 @@
+<footer>
+  <div class="inner">
+    <% if params[:controller] == 'session' %>
+      <div class="fb-like" data-href="http://www.zzzine.com" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+    <% end %>
+    <div class="site-credits">
+      &copy;<%= Time.now.year %> ZZZINE<br>
+      A piece of internet by <a target="_blank" href="http://twitter.com/coryetzkorn">cory</a> + <a target="_blank" href="https://github.com/elliottetzkorn">elliott</a>
+    </div>
+    <% if params[:controller] == 'session' %>
+      <div class="attribution">
+        <a target="_blank" href="http://giphy.com"><%= image_tag 'attribution-light.gif' %></a>
+      </div>
+    <% end %>
+  </div>
+</footer>

@@ -6,7 +6,4 @@ module ApplicationHelper
     end
     return classes
   end
-  def current_controler
-    controller_name
-  end
 end

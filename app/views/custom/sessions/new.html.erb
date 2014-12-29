@@ -1,20 +1,11 @@
-<div class="lead">
-  <svg class="wordmark" version="1.1"
-     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-     x="0px" y="0px" width="200px" height="46.6px" viewBox="0 0 200 46.6" enable-background="new 0 0 200 46.6" xml:space="preserve"
-    >
-  <path class="letter" d="M8.7,39.9h12v6.7H0V44L12.7,6.7H0.8V0h20.4v2.6L8.7,39.9z"/>
-  <path class="letter" d="M45.6,39.9h12v6.7H37V44L49.6,6.7H37.7V0h20.4v2.6L45.6,39.9z"/>
-  <path class="letter" d="M82.6,39.9h12v6.7H73.9V44L86.6,6.7H74.7V0h20.4v2.6L82.6,39.9z"/>
-  <path class="letter" d="M112.7,46.6V0h7.4v46.6H112.7z"/>
-  <path class="letter" d="M156.5,46.6l-7.8-21.1l-2.6-7.1v28.3h-6.7V0h6.6l7.3,21.4l2.4,7.2V0h6.7v46.6H156.5z"/>
-  <path class="letter" d="M181.4,46.6V0H200v6.6h-11.2v12.9h7.8v6.2h-7.8v14.2H200v6.8H181.4z"/>
-  </svg>
+<header>
+  <%= render 'shared/logo' %>
   <div class="subhead">
     <h2>Turn your tweets into a web-zine</h2>
   </div>
   <a class="btn" href="/users/auth/twitter">Sign in with Twitter</a>
-</div>
+  <span class="agreement">By clicking "Sign in with Twitter",<br>you agree to our <a href="/terms">Terms</a></span>
+</header>
 
 <!-- #user.tweets.first.gif.url -->
 <div class="feed">
@@ -31,14 +22,4 @@
   <% end %>
 </div>
 
-<footer>
-  <div class="inner">
-    <div class="site-credits">
-      &copy;<%= Time.now.year %> ZZZINE<br>
-      A piece of internet by <a href="http://twitter.com/coryetzkorn">cory</a> + <a href="https://github.com/elliottetzkorn">elliott</a>
-    </div>
-    <div class="attribution">
-      <a target="_blank" href="http://giphy.com"><%= image_tag 'attribution-light.gif' %></a>
-    </div>
-  </div>
-</footer>
+<%= render 'shared/footer' %>

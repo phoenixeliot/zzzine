@@ -69,6 +69,9 @@ $secondary: #A8A8A8;
 @mixin thick-shadow() {
   box-shadow: 1px 1px 0px #ccc, 2px 2px 0px #ccc, 3px 3px 0px #ccc, 4px 4px 0px #ccc, 5px 5px 0px #ccc, 6px 6px 0px #ccc, 7px 7px 0px #ccc, 8px 8px 0px #ccc, 9px 9px 0px #ccc, 10px 10px 0px #ccc;
 }
+@mixin thick-shadow-active() {
+  box-shadow: 1px 1px 0px #ccc, 2px 2px 0px #ccc, 3px 3px 0px #ccc, 4px 4px 0px #ccc, 5px 5px 0px #ccc, 6px 6px 0px #ccc, 7px 7px 0px #ccc, 8px 8px 0px #ccc;
+}
 
 /* UTILITIES
 --------------------------------------------- */
