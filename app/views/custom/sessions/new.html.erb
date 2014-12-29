@@ -1,48 +1,44 @@
-<div class="v-align">
-  <svg class="wordmark mini-wordmark" version="1.1"
-       xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-       x="0px" y="0px" width="230px" height="50px" viewBox="0 0 429 100" enable-background="new 0 0 429 100" xml:space="preserve">
-    <defs>
-    </defs>
-    <path class="letter" d="M18.6,85.6h25.7V100H0v-5.6l27.2-80.2H1.7V0h43.8v5.6L18.6,85.6z"/>
-    <path class="letter" d="M97.9,85.6h25.7V100H79.3v-5.6l27.2-80.2H80.9V0h43.8v5.6L97.9,85.6z"/>
-    <path class="letter" d="M177.2,85.6h25.7V100h-44.3v-5.6l27.2-80.2h-25.5V0h43.8v5.6L177.2,85.6z"/>
-    <path class="letter" d="M241.7,100V0h15.9v100H241.7z"/>
-    <path class="letter" d="M335.6,100l-16.8-45.3l-5.6-15.3V100h-14.4V0h14.1l15.6,45.8l5.1,15.5V0h14.3v100H335.6z"/>
-    <path class="letter" d="M389,100V0H429v14.1h-24v27.6h16.7V55H405v30.5h24V100H389z"/>
+<div class="lead">
+  <svg class="wordmark" version="1.1"
+     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+     x="0px" y="0px" width="200px" height="46.6px" viewBox="0 0 200 46.6" enable-background="new 0 0 200 46.6" xml:space="preserve"
+    >
+  <path class="letter" d="M8.7,39.9h12v6.7H0V44L12.7,6.7H0.8V0h20.4v2.6L8.7,39.9z"/>
+  <path class="letter" d="M45.6,39.9h12v6.7H37V44L49.6,6.7H37.7V0h20.4v2.6L45.6,39.9z"/>
+  <path class="letter" d="M82.6,39.9h12v6.7H73.9V44L86.6,6.7H74.7V0h20.4v2.6L82.6,39.9z"/>
+  <path class="letter" d="M112.7,46.6V0h7.4v46.6H112.7z"/>
+  <path class="letter" d="M156.5,46.6l-7.8-21.1l-2.6-7.1v28.3h-6.7V0h6.6l7.3,21.4l2.4,7.2V0h6.7v46.6H156.5z"/>
+  <path class="letter" d="M181.4,46.6V0H200v6.6h-11.2v12.9h7.8v6.2h-7.8v14.2H200v6.8H181.4z"/>
   </svg>
-  <h2>Create your ZZZINE with one click</h2>
-
-  <a class="btn-large" href="/users/auth/twitter">Sign in with Twitter</a>
-  <br>
-  <br>
-  <div class="preview">
-    Hot off the press...
-    <ul>
-      <% @last_users.each do |user| %>
-        <% half = rand(2) %>
-        <% if half == 0 %>
-          <% @side1, @side2 = "left", "right" %>
-        <% else %>
-          <% @side1, @side2 = "right", "left" %>
-        <% end %>
-        <a class="previewLink" href="/view/<%= user.uid %>">
-          <li class="previewEntry">
-            <img style="float:<%= @side1%>" class="previewImage" src='<%= user.tweets.first.gif.url %>'>
-            <div style="<%= @side2%>: 0" class="previewSummary">
-              <a style="color: black" href="http://twitter.com/<%= user.uid %>" target="_blank">@<%= user.uid %></a>
-              <%= user.tweets.first.content unless user.nil? %>
-            </div>     
-            <% user.style_id unless user.nil? %>
-          
-          </li>
-        </a>
-      <% end %>
-
-    </ul>
+  <div class="subhead">
+    <h2>Turn your tweets into a web-zine</h2>
   </div>
-  <div class="site-credits">
-    &copy;<%= Time.now.year %> ZZZINE<br>
-    A piece of internet by <a href="http://twitter.com/coryetzkorn">cory</a> + <a href="https://github.com/elliottetzkorn">elliott</a>
-  </div>
+  <a class="btn" href="/users/auth/twitter">Sign in with Twitter</a>
 </div>
+
+<!-- #user.tweets.first.gif.url -->
+<div class="feed">
+  <h2>Hot off the press...</h2>
+  <% @last_users.each_with_index do |user, index| %>
+    <a class="item item-<%= index %>" href="/view/<%= user.uid %>">
+      <img src='<%= image_url 'placeholder/giphy-' + (index+1).to_s + '.gif' %>'>
+      <div class="content">
+        <span class="user">@<%= user.uid %></span>
+        <span class="tweet"><%= user.tweets.first.content unless user.nil? %></span>
+      </div>     
+      <% user.style_id unless user.nil? %>
+    </a>
+  <% end %>
+</div>
+
+<footer>
+  <div class="inner">
+    <div class="site-credits">
+      &copy;<%= Time.now.year %> ZZZINE<br>
+      A piece of internet by <a href="http://twitter.com/coryetzkorn">cory</a> + <a href="https://github.com/elliottetzkorn">elliott</a>
+    </div>
+    <div class="attribution">
+      <a target="_blank" href="http://giphy.com"><%= image_tag 'attribution-light.gif' %></a>
+    </div>
+  </div>
+</footer>

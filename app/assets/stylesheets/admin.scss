@@ -13,7 +13,6 @@ ADMINISTRATIVE VIEWS & MODULES
 .site-credits {
   margin-top: 40px;
   font-size: 12px;
-  @include font-base-bold;
   text-transform: uppercase;
   line-height: 2;
   a {
@@ -23,19 +22,17 @@ ADMINISTRATIVE VIEWS & MODULES
     } 
   }
 }
-.btn-large {
-  @include font-base-bold;
-  display: block;
-  width: 240px;
+.btn {
+  display: inline-block;
   padding: 1em;
-  margin: 0 auto;
   background: #000;
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.05em;
   &:hover {
-    color: #fff;
-    background: #000 !important;
+    @include thick-shadow;
   }
   &.btn-disabled {
     background: #ccc;
@@ -56,15 +53,20 @@ ADMINISTRATIVE VIEWS & MODULES
 .tweets,
 .sessions {
   .wrapper {
-    padding: 30px;
-    @include font-base;
+    border: 10px solid #000;
+    padding: 0 20px;
     text-align: center;
+    @include bp(small) {
+      border: 0;
+    }
   }
   .wordmark {
     margin-top: 20px;
   }
+  .subhead {
+    margin: 30px 0;
+  }
   h2 {
-    @include font-base-bold;
     font-size: 20px;
     line-height: 1.4;
   }
@@ -93,7 +95,6 @@ ADMINISTRATIVE VIEWS & MODULES
       height: 0;
     }
     .step {
-      @include font-base-bold;
       display: block;
       position: absolute;
       width: 100%;
@@ -145,10 +146,116 @@ ADMINISTRATIVE VIEWS & MODULES
   }
 }
 
-/* Theme Picker
-=======
+/* Home Page
+--------------------------------------------- */
+.sessions-new {
+  .lead {
+    margin-top: 60px;
+  }
+  .feed {
+    margin-top: 50px;
+    text-align: center;
+    h2 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .item {
+      line-height: 1.5;
+      position: relative;
+      display: inline-block;
+      color: #000;
+      text-decoration: none;
+      width: 250px;
+      margin: 20px;
+      border: 10px solid #000;
+      padding: 20px 20px 0 0;
+      text-align: left;
+      vertical-align: middle;
+      &:hover {
+        @include thick-shadow;
+      }
+    }
+    img {
+      width: 100%;
+      max-width: none;
+    }
+    .user {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 12px;
+    }
+    .content {
+      position: relative;
+      font-size: 16px;
+      background: #fff;
+      padding: 20px;
+      margin-top: -40px;
+      width: 80%;
+      word-break: break-word;
+    }
+    .item-0 { width: 350px; }
+    .item-1 { width: 300px; }
+    .item-2 { width: 320px; }
+    .item-3 { width: 440px; }
+    .item-4 { width: 400px; }
+    .item-5 { width: 360px; }
+    .item-6 { width: 290px; }
+    .item-7 { width: 320px; }
+    .item-8 { width: 350px; }
+    .item-9 { width: 420px; }
+    .item-10 { width: 360px; }
+    .item-11 { width: 320px; }
+    .item-2,
+    .item-5,
+    .item-6,
+    .item-9,
+    .item-11 {
+      padding: 20px 0 0 20px;
+      .content {
+        margin-left: 20%;
+      }
+    }
+    .item-4,
+    .item-8 {
+      padding: 0 0 0 20px;
+      .content {
+        margin-left: 20%;
+      }
+    }
+    @include bp(small) {
+      .item-0,
+      .item-1,
+      .item-2,
+      .item-3,
+      .item-4,
+      .item-5,
+      .item-6,
+      .item-7,
+      .item-8,
+      .item-9,
+      .item-10,
+      .item-11 {
+        display: block;
+        width: 100%;
+        margin: 40px auto;
+        max-width: 400px;
+        padding: 0;
+        .content {
+          width: auto;
+          margin: 0;
+        }
+      }
+    }
+  }
+  footer {
+    margin: 40px 0;
+    .attribution {
+      margin-top: 20px;
+    }
+  }
+}
+
 /* Admin Toolbar
->>>>>>> 54bf91e... Editor
 --------------------------------------------- */
 .view.logged-in .theme {
   padding-top: 36px;
@@ -158,7 +265,6 @@ ADMINISTRATIVE VIEWS & MODULES
   z-index: 100;
   width: 100%;
   color: #ccc;
-  @include font-base-bold;
   font-size: 12px;
   text-transform: uppercase;
   background: #000;
@@ -199,7 +305,6 @@ ADMINISTRATIVE VIEWS & MODULES
       color: #5b5b5b;
     }
     input {
-      @include font-base;
       width: 100%;
       color: #fff;
       background: transparent;

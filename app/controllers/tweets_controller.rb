@@ -56,7 +56,8 @@ class TweetsController < ApplicationController
           
           @gif = nil
 
-          giphy_api_key = "yoJC2NqbB7RYLZoVTq"
+          giphy_api_key = "dc6zaTOxFJmzC"
+          #giphy_api_key = "yoJC2NqbB7RYLZoVTq"
 
           first = HTTParty.get("http://api.giphy.com/v1/gifs/search?q=" + temp_words[0] + "&api_key=" + giphy_api_key)['data'] if temp_words[0]
           

@@ -8,36 +8,6 @@ THEMES
 /* Global Theme Settings
 --------------------------------------------- */
 
-.previewImage {
-  width: 290px;
-  margin-bottom: 40px;
-  z-index: 1;
-  position: relative;
-  top: 15px;
-}
-
-.previewSummary {
-  background: white;
-  width: 70%;
-  padding: 10px;
-  bottom: 0;
-  z-index: 2;
-  position: absolute;
-}
-
-.previewEntry {
-  overflow:hidden;
-  margin: 15px;
-  width: 310px;
-  display: inline-block;
-  position: relative;
-}
-
-.previewLink {
-  text-decoration: none;
-  color: black;
-}
-
 .theme {
   font-size: 24px;
   text-align: center;

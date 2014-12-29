@@ -7,25 +7,35 @@ $(document).ready(function() {
     for (var i = 0; i < 6; i++ ) {
         color += letters[Math.floor(Math.random() * 16)];
     }
+    console.log(color);
     return color;
   }
 
-  /* Flashing buttons */
-  if($('.btn-flash').length) {
-    var signInButton = $('.btn-flash');
+  /* Flashing home page frames */
+  if($('.feed').length) {
+    var items = $('.feed .item');
+    var randIndex;
+    var prevRandIndex;
     setInterval(function() {
+      function setRandIndex() {
+        randIndex = Math.floor(Math.random() * items.length);
+        if(randIndex === prevRandIndex) {
+          setRandIndex();
+        }
+        prevRandIndex = randIndex;
+      }
+      setRandIndex();
+      var item = items[randIndex];
       var hex = getRandomColor();
-      signInButton.css({ 'background': hex });
-    }, 600);
+      $(item).css({'border-color': hex});
+    }, 300);
   }
 
   /* Flashing wordmarks */
   if($('.wordmark').length) {
-
     var letters = $('.wordmark .letter');
     var randLetterIndex;
     var prevRandLetterIndex;
-
     setInterval(function() {
       function setRandLetterIndex() {
         randLetterIndex = Math.floor(Math.random() * letters.length);
@@ -38,8 +48,7 @@ $(document).ready(function() {
       var letter = letters[randLetterIndex];
       var hex = getRandomColor();
       $(letter).attr({ 'fill': hex });
-    }, 100);
-    
+    }, 300);
   }
 
   /* Intermediate processing loader */
