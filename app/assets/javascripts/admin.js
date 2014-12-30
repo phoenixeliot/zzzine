@@ -7,7 +7,6 @@ $(document).ready(function() {
     for (var i = 0; i < 6; i++ ) {
         color += letters[Math.floor(Math.random() * 16)];
     }
-    console.log(color);
     return color;
   }
 
@@ -81,7 +80,7 @@ $(document).ready(function() {
           updateProgress(status);
         }
       });
-    }, 600);
+    }, 200);
   }
 
   /* Admin Bar */
@@ -100,7 +99,6 @@ $(document).ready(function() {
         $('#cancel').hide();
         $('.editable').hide();
         var formData = $('#update-form').serialize();
-        console.log(formData);
       } else {
         $(this).text('Save');
         $('#cancel').show();
