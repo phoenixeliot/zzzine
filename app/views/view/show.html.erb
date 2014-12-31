@@ -2,7 +2,7 @@
 <div class="admin-bar">
   <a href="#" class="action left" id="edit">Edit</a>
   <a href="#" class="action left" id="cancel">Cancel</a>
-  <%= link_to "Destroy", admin_destroy_user_path(@current.uid), method: :delete, data: { confirm: "You sure?" } %>
+  <%= link_to "Delete", admin_destroy_user_path(@current.uid), :class=>"action left" , method: :delete, data: { confirm: "You sure?" } %>
   <a data-method="delete" href="/users/sign_out" class="action right" id="edit">Logout</a>
   <div class="editable">
     <form id="update-form" action="/view/<%= @current.uid %>/edit" method="GET">
